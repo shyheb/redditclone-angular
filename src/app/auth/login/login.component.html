@@ -1,0 +1,47 @@
+<div class="login-section">
+  <div class="row justify-content-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header" style="text-align: center"><h4>Login</h4></div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group row">
+              <label for="user_name" class="col-md-4 col-form-label text-md-right">Username</label>
+              <div class="col-md-6">
+                <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="user_name" required>
+                <span *ngIf="loginForm.controls.username.invalid && loginForm.controls.username.touched">
+                  Please enter a valid username
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+              <div class="col-md-6">
+                <input type="password" id="password" class="form-control" [formControlName]="'password'" name="password" required>
+                <span *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+                  Please enter a valid password
+                </span>
+              </div>
+            </div>
+
+            <span class="col-md-6 offset-md-4">
+                            <button type="submit" class="login btn btn-primary" [disabled]="loginForm.invalid">
+                                Login
+                            </button>
+                            <span style="padding-left: 15px">New to SpringReddit? <a routerLink="/signup">SIGN-UP</a></span>
+                        </span>
+            <div class="login-failed" *ngIf="isError">
+              <p class="login-failed-text">{{errorMsg}}</p>
+            </div>
+            <div class="login-success" *ngIf="registerSuccessMessage != null">
+              <p class="login-success-text">{{registerSuccessMessage}}</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
