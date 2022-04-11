@@ -14,6 +14,10 @@ import {ToastNoAnimationModule, ToastrModule} from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import {TokenInterceptor} from './token-interceptor';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { VoteButtonComponent } from './shared/vote-button/vote-button.component';
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { SubredditSideBarComponent } from './shared/subreddit-side-bar/subreddit-side-bar.component';
+import { PostComponent } from './shared/post/post.component';
 
 
 @NgModule({
@@ -22,7 +26,11 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    VoteButtonComponent,
+    SideBarComponent,
+    SubredditSideBarComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
