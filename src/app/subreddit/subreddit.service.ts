@@ -15,4 +15,8 @@ export class SubredditService {
   getAllSubreddits(): Observable<Array<SubredditModel>>{
     return this.httpClient.get<Array<SubredditModel>>(this.HOST + 'api/subreddit/');
   }
+
+  saveSubreddit(subreddit: SubredditModel): Observable<SubredditModel>{
+    return this.httpClient.post<SubredditModel>(this.HOST + 'api/subreddit/', subreddit);
+  }
 }

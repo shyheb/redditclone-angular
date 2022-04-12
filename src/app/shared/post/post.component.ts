@@ -27,8 +27,4 @@ export class PostComponent implements OnInit {
       }
     );
   }
-
-  goToPost(id: number) {
-    
-  }
 }

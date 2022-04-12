@@ -12,10 +12,10 @@
             </span>
     <hr />
     <div class="post-title">
-      <a class="postname" href="{{post.url}}">{{post.postName}}</a>
+      <a class="postname" routerLink="/view-post/{{post.id}}">{{post.postName}}</a>
     </div>
     <div>
-      <p class="post-text">{{post.description}}</p>
+      <p class="post-text" [innerHTML]="post.description"></p>
     </div>
     <hr />
     <span>
@@ -23,7 +23,7 @@
                 <fa-icon [icon]="faComments"></fa-icon>
                 Comments({{post.commentCount}})
               </a>
-              <button class="login" (click)="goToPost(post.id)">
+              <button class="login" routerLink="/view-post/{{post.id}}">
                 Read Post
               </button>
             </span>
