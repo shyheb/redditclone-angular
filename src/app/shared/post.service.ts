@@ -25,4 +25,8 @@ export class PostService {
   getPost(postId: number): Observable<PostModel> {
     return this.httpClient.get<PostModel>(this.HOST + 'api/posts/' + postId);
   }
+
+  getAllPostsByUser(name: string): Observable<PostModel[]> {
+    return this.httpClient.get<PostModel[]>(this.HOST + 'api/posts/by-user/' + name);
+  }
 }

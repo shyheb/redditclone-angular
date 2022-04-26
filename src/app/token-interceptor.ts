@@ -5,7 +5,6 @@ import {AuthService} from './auth/shared/auth.service';
 import {StorageService} from 'ngx-webstorage/lib/core/interfaces/storageService';
 
 const TOKEN_HEADER_KEY = 'Authorization';       // for Spring Boot back-end
-const TOKEN_KEY = 'token';       // for Spring Boot back-end
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +15,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let authReq = req;
-    const token = this.authService.getToken(TOKEN_KEY);
+    const token = this.authService.getToken();
     if (token != null) {
       authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token) });
     }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PostService} from '../post.service';
 import {PostModel} from '../post-model';
 import {faComments} from '@fortawesome/free-solid-svg-icons/faComments';
@@ -11,20 +11,12 @@ import {faComments} from '@fortawesome/free-solid-svg-icons/faComments';
 })
 export class PostComponent implements OnInit {
 
-  posts$: Array<PostModel>;
+  @Input() posts$: PostModel[];
 
   faComments = faComments;
 
-  constructor(private postService: PostService) {
+  constructor() {
   }
 
-  ngOnInit(): void {
-    this.postService.getAllPosts().subscribe(
-      (posts) => {
-        this.posts$ = posts;
-      }, (err) => {
-        console.log(err);
-      }
-    );
-  }
+  ngOnInit(): void { }
 }
