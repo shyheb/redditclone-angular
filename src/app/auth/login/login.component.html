@@ -7,7 +7,7 @@
         <div class="card-body">
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="form-group row">
-              <label for="user_name" class="col-md-4 col-form-label text-md-right">Username</label>
+              <label for="user_name" class="col-md-4 col-form-label text-md-right">Email</label>
               <div class="col-md-6">
                 <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="user_name" required>
                 <span *ngIf="loginForm.controls.username.invalid && loginForm.controls.username.touched">

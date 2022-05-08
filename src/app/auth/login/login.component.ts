@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       }, (err) => {
         if (err.status === 409) {
           this.errorMsg = 'Please Activate your account';
-        }else if (err.status === 404) {
+        }else if (err.status === 404 || err.status === 401) {
           this.errorMsg = 'Login Failed. Please check your credentials and try again.';
         }
         this.isError = true;
